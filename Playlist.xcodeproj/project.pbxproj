@@ -16,6 +16,7 @@
 		64A861511D2EC7890060D12C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A861501D2EC7890060D12C /* Song.swift */; };
 		64A861531D2EC7990060D12C /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A861521D2EC7990060D12C /* Playlist.swift */; };
 		64A861581D2ECDF90060D12C /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A861571D2ECDF90060D12C /* PlaylistController.swift */; };
+		64A8615B1D2EE9450060D12C /* SongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8615A1D2EE9450060D12C /* SongController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		64A861501D2EC7890060D12C /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		64A861521D2EC7990060D12C /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		64A861571D2ECDF90060D12C /* PlaylistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
+		64A8615A1D2EE9450060D12C /* SongController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SongController.swift; path = ../SongController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		64A861591D2ECE0E0060D12C /* modelController */ = {
 			isa = PBXGroup;
 			children = (
+				64A8615A1D2EE9450060D12C /* SongController.swift */,
 				64A861571D2ECDF90060D12C /* PlaylistController.swift */,
 			);
 			name = modelController;
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A8615B1D2EE9450060D12C /* SongController.swift in Sources */,
 				64A861511D2EC7890060D12C /* Song.swift in Sources */,
 				64A8613B1D2EB6F00060D12C /* AppDelegate.swift in Sources */,
 				64A8614F1D2EBFC20060D12C /* SongTableViewController.swift in Sources */,
