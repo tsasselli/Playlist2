@@ -10,6 +10,11 @@ import Foundation
 
 class PlaylistController {
     
+   
+    static let sharedController = PlaylistController ()
+    
+    
+    
     var playlists: [Playlist] = []
     
     
@@ -26,7 +31,7 @@ class PlaylistController {
     func deletePlaylist(playlist: Playlist) {
         
         if let index = playlists.indexOf(playlist) {
-        playlists.removeAtIndex(<#T##index: Int##Int#>)
+        playlists.removeAtIndex(index)
         
         //playlists.removeAtIndex(
         }

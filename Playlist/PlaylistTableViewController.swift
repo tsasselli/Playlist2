@@ -16,16 +16,20 @@ class PlaylistTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    //MARK: - Action Buttons
+    
+    
+    
+    
+    
+    
+    
+    }    //MARK: - Action Buttons
     @IBAction func addButttonTapped(sender: AnyObject) {
+        guard let playlistName = playlistTextField.text else {return}
         
+        PlaylistController.sharedController.addPlaylist(playlistName)
+        playlistTextField.text = ""
+        tableView.reloadData()
         
     }
     
@@ -38,18 +42,22 @@ class PlaylistTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return PlaylistController.sharedController.playlists.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("playlistCell", forIndexPath: indexPath)
 
-        // Configure the cell...
+        let playlist = PlaylistController.sharedController.playlists[indexPath.row]
+        cell.textLabel?.text = playlist.title
+        cell.detailTextLabel?.text = "\(playlist.songArray.count) songs"
+        
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
