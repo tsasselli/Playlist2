@@ -17,13 +17,16 @@ class PlaylistTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+}
     
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     
     
-    
-    
-    }    //MARK: - Action Buttons
+    //MARK: - Action Buttons
     @IBAction func addButttonTapped(sender: AnyObject) {
         guard let playlistName = playlistTextField.text else {return}
         
@@ -94,14 +97,29 @@ class PlaylistTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
+        //how are we going to get there? 
+        if segue.identifier == "toPlaylistDetailSegue" {
+        //where to ?
+        let songTableViewController = segue.destinationViewController as? SongTableViewController
+        /// What do i want to take? And where is it currently? 
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let playlist = PlaylistController.sharedController.playlists[indexPath.row]
+                
+                // DID I ARRIVE?
+                songTableViewController?.playlist = playlist
+        }
+    
     }
-    */
+    
 
+}
 }
