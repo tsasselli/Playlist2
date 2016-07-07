@@ -36,4 +36,20 @@ class PlaylistController {
         //playlists.removeAtIndex(
         }
     }
-}
+    
+    
+    func addSongToPlaylist (song: Song, playlist: Playlist) {
+        playlist.songArray.append(song)
+        
+    
+    
+    }
+    
+    
+    func removeSongFromPlaylist(song: Song, playlist: Playlist) {
+        guard let index = playlist.songArray.indexOf(song) else {return}
+    
+         playlist.songArray.removeAtIndex(index)
+    }
+    }
+    
