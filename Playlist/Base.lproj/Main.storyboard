@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Playlist Table View Controller-->
         <scene sceneID="Nv8-Eb-LIt">
             <objects>
-                <tableViewController id="iic-6M-N7z" sceneMemberID="viewController">
+                <tableViewController id="iic-6M-N7z" customClass="PlaylistTableViewController" customModule="Playlist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mhC-CN-6PO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,11 +70,15 @@
                     <navigationItem key="navigationItem" id="sR1-hh-y1h">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="M6h-Bt-Ufy">
                             <connections>
-                                <segue destination="isx-pt-h5o" kind="show" id="V9z-31-ZV6"/>
+                                <action selector="addButttonTapped:" destination="iic-6M-N7z" id="P1t-NO-ahd"/>
+                                <segue destination="isx-pt-h5o" kind="show" identifier="toPlaylistDetailSegue" id="V9z-31-ZV6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="playlistTextField" destination="Sjr-9r-kbG" id="jTi-Zl-04t"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgj-Kj-jsm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,7 +87,7 @@
         <!--Title-->
         <scene sceneID="NPU-ac-khd">
             <objects>
-                <viewController id="isx-pt-h5o" sceneMemberID="viewController">
+                <viewController id="isx-pt-h5o" customClass="SongTableViewController" customModule="Playlist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vap-fN-pnc"/>
                         <viewControllerLayoutGuide type="bottom" id="kWW-4z-xwf"/>
@@ -160,9 +164,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="gh8-b3-F6I">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ynD-FS-yGh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ynD-FS-yGh">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="isx-pt-h5o" id="J9c-yl-oxA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="artistTextField" destination="67W-CQ-llh" id="3GA-si-01a"/>
+                        <outlet property="myTableView" destination="aD1-hh-KqU" id="6jf-4H-SL5"/>
+                        <outlet property="songTextField" destination="Kzy-3n-JzO" id="yQO-bs-Hbq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSU-5e-Okl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
