@@ -31,6 +31,13 @@ class Playlist: Equatable {
         self.title = title
         self.songArray = songs
     }
+    
+    
+    
+       
+    
+    
+    
 }
 
 func ==(lhs: Playlist, rhs: Playlist) -> Bool {
