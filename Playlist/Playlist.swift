@@ -32,9 +32,15 @@ class Playlist: Equatable {
         self.songArray = songs
     }
     
+    init? (dictionary: [String: AnyObject]) {
+        guard let title = dictionary[kPlaylistTitle] as? String,
+        songsDictionaryArray = dictionary[kSongs] as? [[String:AnyObject]]
+            else { return nil
+        }
+        self.title = title
+        self.songArray = songsDictionaryArray.flatMap{ Song (dictionary: $0) }
     
-    
-       
+    }
     
     
     
