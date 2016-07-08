@@ -25,6 +25,7 @@ class PlaylistController {
     func addPlaylist (name: String) {
         let playlist = Playlist(title:  name)
         playlists.append(playlist)
+        saveToPresistantStorage()
         
     }
     
@@ -32,7 +33,7 @@ class PlaylistController {
         
         if let index = playlists.indexOf(playlist) {
         playlists.removeAtIndex(index)
-        
+        saveToPresistantStorage()
         //playlists.removeAtIndex(
         }
     }
@@ -41,7 +42,7 @@ class PlaylistController {
     func addSongToPlaylist (song: Song, playlist: Playlist) {
         playlist.songArray.append(song)
         
-    
+         saveToPresistantStorage()
     
     }
     
@@ -53,3 +54,15 @@ class PlaylistController {
     }
     }
     
+func saveToPresistantStorage() {
+
+
+
+}
+
+
+func loadFromPresistantStorage () {
+    
+    
+    
+}
