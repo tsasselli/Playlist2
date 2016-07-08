@@ -56,7 +56,7 @@ class PlaylistController {
     
 func saveToPresistantStorage() {
 
-    NSUserDefaults.standardUserDefaults().setObject(playlists.map{ $0.dictionaryCopy}, forKey: kPlaylists)
+    NSUserDefaults.standardUserDefaults().setObject(playlists.map{ $0.playlistDictionary}, forKey: kPlaylists)
     
 }
 
