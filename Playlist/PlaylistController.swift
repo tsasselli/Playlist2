@@ -9,7 +9,7 @@
 import Foundation
 
 class PlaylistController {
-    
+    private let kPlaylists = "storedPlaylistKey"
    
     static let sharedController = PlaylistController ()
     
@@ -52,17 +52,20 @@ class PlaylistController {
     
          playlist.songArray.removeAtIndex(index)
     }
-    }
+    
     
 func saveToPresistantStorage() {
 
-
-
+    NSUserDefaults.standardUserDefaults().setObject(playlists.map{ $0.dictionaryCopy}, forKey: kPlaylists)
+    
 }
 
 
 func loadFromPresistantStorage () {
     
+    guard let playlistsDictionaryArray =   NSUserDefaults.standardUserDefaults().objectForKey(kPlaylists) as? [[String: AnyObject]] else { return
     
-    
+    }
+    playlists = playlistsDictionaryArray.flatMap{ Playlist(dictionary: $0) }
+}
 }
