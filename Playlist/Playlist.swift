@@ -10,8 +10,21 @@ import Foundation
 
 class Playlist: Equatable {
 
+    private let kPlaylistTitle = "playlistTitleKey"
+    private let kSongs = "songsKey"
+    
+    
     let title: String
     var songArray: [Song]
+    
+    var playlistDictionary: [String: AnyObject] {
+        return [kPlaylistTitle: title, kSongs: songArray.map{ $0.dictionaryCopy}] //String: AnyObject]]
+        
+    
+    }
+    
+    
+    
 
     init(title: String, songs: [Song] = []) {
         
